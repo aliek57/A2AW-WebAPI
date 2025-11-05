@@ -63,13 +63,19 @@ public class UsuarioEndpoint {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response atualizar(Usuario usuario) {
-        try {
+		try {
             usuarioService.atualizar(usuario);
             return Response.ok(usuario).build();
-        } catch (Exception e) {
-            return Response.status(Status.NOT_FOUND)
-                           .entity(e.getMessage())
-                           .build();
+        } catch (RuntimeException e) {
+            if (e.getMessage().contains("não encontrado")) {
+                return Response.status(Status.NOT_FOUND)
+                               .entity(e.getMessage())
+                               .build();
+            } else {
+                return Response.status(Status.BAD_REQUEST) 
+                               .entity(e.getMessage())
+                               .build();
+            }
         }
     }
 	

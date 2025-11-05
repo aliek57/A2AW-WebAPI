@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Listagem de Usuários</title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="img/user-logo.svg" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="css/cadastrar.css" />
+    <link rel="stylesheet" type="text/css" href="css/listar.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="jquery/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="link-voltar">
+            <i class="fas fa-arrow-left"></i> Voltar
+        </a>
+        <h1>Usuários Cadastrados</h1>
+        <div class="busca-container">
+            <input type="text" id="campo-busca" class="form-input" placeholder="Pesquisar por nome ou e-mail...">
+        </div>        
+        <h2 id="contador-usuarios">Carregando...</h2>
+        <div id="mensagem"></div>
+        <div class="tabela-container">
+            <table class="tabela-usuarios">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Idade</th>
+                        <th class="td-acoes">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-corpo">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="modal-editar" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-fechar" data-modal="modal-editar">&times;</span>
+            <h2>Editar Usuário</h2>
+            <form id="form-modal-editar" class="form-cadastro">
+                <input type="hidden" id="edit-id">
+                <div class="form-group">
+                    <label for="edit-nome" class="form-label">Nome:</label>
+                    <input type="text" id="edit-nome" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-email" class="form-label">E-mail:</label>
+                    <input type="email" id="edit-email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="edit-idade" class="form-label">Idade:</label>
+                    <input type="number" id="edit-idade" class="form-input" required>
+                </div>
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-save"></i> Salvar Alterações
+                </button>
+            </form>
+        </div>
+    </div>
+    <div id="modal-remover" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-fechar" data-modal="modal-remover">&times;</span>
+            <h2>Confirmar Remoção</h2>
+            <p id="confirmar-remocao-texto"></p>
+            <div class="modal-botoes">
+                <button type="button" class="btn-cancelar" data-modal="modal-remover">
+                    Cancelar
+                </button>
+                <button type="button" id="btn-confirmar-remocao" class="btn-confirmar-remocao">
+                    <i class="fas fa-trash-alt"></i> Confirmar
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="js/listar.js"></script>
+</body>
+</html>

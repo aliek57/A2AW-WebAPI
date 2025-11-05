@@ -44,6 +44,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 		if (usuarioRepository.buscarPorId(usuario.getId()).isEmpty()) {
             throw new RuntimeException("Usuário não encontrado para atualização.");
         }
+		if (usuario.getIdade() < 18) {
+			throw new RuntimeException("Usuário menor de idade");
+		}
 		usuarioRepository.salvar(usuario);
 	}
 

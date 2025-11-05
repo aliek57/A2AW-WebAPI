@@ -1,0 +1,208 @@
+.busca-container {
+    margin-bottom: 25px;
+}
+
+#campo-busca {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+#campo-busca:focus {
+    outline: none;
+    border-color: var(--cor-acento-principal);
+    box-shadow: 0 0 10px var(--cor-acento-principal);
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.tabela-usuarios th,
+.tabela-usuarios td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--cor-borda);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tabela-usuarios th {
+    color: var(--cor-acento-secundario);
+    font-weight: 700;
+}
+
+.tabela-usuarios td {
+    color: var(--cor-texto);
+    font-size: 0.95em;
+    word-break: break-word;
+}
+
+.td-acoes {
+    text-align: center;
+    min-width: 100px;
+}
+
+.btn-acao {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 5px;
+    margin-left: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-editar {
+    color: var(--cor-acento-secundario);
+}
+.btn-editar:hover {
+    color: var(--cor-titulo);
+}
+
+.btn-remover {
+    color: #e74c3c;
+}
+.btn-remover:hover {
+    color: #ff6b5a;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--cor-container);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 0 40px rgba(195, 155, 211, 0.2);
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-fechar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5em;
+    color: var(--cor-texto);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-fechar:hover {
+    color: var(--cor-acento-principal);
+}
+
+.modal-botoes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-cancelar {
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    background: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-texto);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background: var(--cor-borda);
+}
+
+.btn-confirmar-remocao {
+    padding: 12px 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9em;
+    background: #e74c3c;
+    border: 1px solid #e74c3c;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-confirmar-remocao:hover {
+    background: #c0392b;
+    border-color: #c0392b;
+}
+
+#confirmar-remocao-texto {
+    font-size: 1.1em;
+}
+
+#confirmar-remocao-texto strong {
+    color: var(--cor-acento-secundario);
+}
+
+@media (max-width: 768px) {
+    .tabela-usuarios thead {
+        display: none;
+    }
+    .tabela-usuarios, .tabela-usuarios tbody, .tabela-usuarios tr, .tabela-usuarios td {
+        display: block;
+        width: 100%;
+    }
+    .tabela-usuarios tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--cor-borda);
+        border-radius: 5px;
+    }
+    .tabela-usuarios td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+    .tabela-usuarios td:last-child {
+        border-bottom: 0;
+    }
+    .tabela-usuarios td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: var(--cor-acento-secundario);
+    }
+    .td-acoes {
+        text-align: right;
+        padding-left: 15px;
+    }
+}
