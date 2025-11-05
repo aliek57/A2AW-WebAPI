@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --cor-fundo: #0d1117;
+    --cor-container: #161b22;
+    --cor-texto: #e0e0e0;
+    --cor-titulo: #ffffff;
+    --cor-acento-principal: #9b59b6;
+    --cor-acento-secundario: #c39bd3;
+    --cor-borda: #30363d;
+}
+
+body {
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px;
+    width: 100%;
+    background-color: var(--cor-container);
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda);
+    box-shadow: 0 0 30px rgba(195, 155, 211, 0.15);
+    text-align: center;
+}
+
+h1 {
+    color: var(--cor-titulo);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h1 {
+    background: linear-gradient(90deg, var(--cor-acento-secundario), var(--cor-acento-principal));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    color: var(--cor-acento-secundario);
+    font-weight: 400;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+.btn-menu {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--cor-acento-principal);  
+    background-color: transparent;
+    border: 2px solid var(--cor-acento-principal);
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+    background-color: var(--cor-acento-principal);
+    color: var(--cor-fundo);  
+    box-shadow: 0 0 20px var(--cor-acento-secundario); 
+    transform: translateY(-3px);
+}
+
+.btn-menu i {
+    margin-right: 12px;
+}
