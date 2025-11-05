@@ -1,0 +1,25 @@
+.btn-menu {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 20px 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: var(--cor-acento-principal);
+    background-color: transparent;
+    border: 2px solid var(--cor-acento-principal);
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover {
+    background-color: var(--cor-acento-principal);
+    color: var(--cor-fundo);
+    box-shadow: 0 0 20px var(--cor-acento-secundario);
+    transform: translateY(-3px);
+}
+
+.btn-menu i {
+    margin-right: 12px;
+}

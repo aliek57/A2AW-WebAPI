@@ -1,0 +1,61 @@
+.form-cadastro {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--cor-acento-secundario);
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--cor-acento-principal);
+    box-shadow: 0 0 10px var(--cor-acento-principal);
+}
+
+.btn-primary {
+    display: inline-block;
+    width: 100%;
+    padding: 15px 30px;
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor-fundo);
+    background-color: var(--cor-acento-principal);
+    border: 2px solid var(--cor-acento-principal);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-acento-secundario);
+    border-color: var(--cor-acento-secundario);
+    box-shadow: 0 0 20px var(--cor-acento-secundario);
+    transform: translateY(-2px);
+}
+
+.btn-primary i {
+    margin-right: 10px;
+}
